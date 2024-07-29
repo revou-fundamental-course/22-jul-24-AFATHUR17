@@ -9,7 +9,9 @@ document.querySelector('form').addEventListener('submit', function(event) {
     }
 });
 
-function toggleMenu() {
-    var navlinks = document.getElementById("navlinks");
-    navlinks,classList.toggle("active");
-}
+const activePage = window.location.pathname;
+const navlinks = document.querySelectorAll('nav a').forEach(link => {
+    if(link.href.includes('${activePage}')){
+        link.classList.add('active');
+    }
+})
