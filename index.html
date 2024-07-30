@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
+        <header>
             <nav class="navbar">
                 <div class="logo">MyTravel</div>
                 <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
@@ -14,16 +15,50 @@
                     <li><a href="#">Our Package</a></li>
                     <li><a href="#">Call Us</a></li>
                 </ul>
+                <div class="burger">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
             </nav>
+        </header>
         
         <main>
-            <header class="header">
-                <h1>Your Trusted Travel Agent's</h1>
-                <p>Your happines is our happines</p>
-            </header>
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="asset img/slide1.jpg" style="width: 100%;">
+                    <div class="text">Australia</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="asset img/slide2.jpg" style="width: 100%;">
+                    <div class="text">Japan</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="asset img/slide3.jpg" style="width: 100%;">
+                    <div class="text">Bali</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="asset img/slide4.jpeg" style="width: 100%;">
+                    <div class="text">Surabaya</div>
+                </div>
+                <div class="mySlides fade">
+                    <img src="asset img/slide5.jpeg" style="width: 100%;">
+                    <div class="text">Singapura</div>
+                </div>
+            </div>
+            <br>
+            <div style="text-align: center;">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
 
             <section class="content">
                 <div class="image-text">
+                    <h1>Your Trusted Travel Agent</h1>
+                    <p>Your Happines is Our Happines</p>
                     <div class="image">
                         <img src="asset img/pemandangan.jpeg" alt class="image">
                     </div>
@@ -37,6 +72,64 @@
                             <p>Karyawan Swasta</p>
                         </div>
                     </div>
+                    <div class="contact">
+                        <h2 class="subsection-title">Contact Us</h2>
+                        <p>
+                          Sales akan menghubungi Anda 1x24 jam setelah data anda kami terima
+                        </p>
+                        <form
+                          class="contact-form"
+                          name="contact-form"
+                          onsubmit="return validateForm()"
+                        >
+                          <div class="form-field">
+                            <label for="name" class="input-label">Your name:</label>
+                            <input
+                              type="text"
+                              id="name"
+                              name="name"
+                              class="input-field"
+                              placeholder="First name and last name"
+                              oninput="fillInput('name')"
+                            />
+                            <p class="error-msg" id="name-error">Please fill your name</p>
+                          </div>
+                          <div class="form-field">
+                            <label for="email" class="input-label">Email Address:</label>
+                            <input
+                              type="text"
+                              id="email"
+                              name="email"
+                              class="input-field"
+                              placeholder="example@email.com"
+                              oninput="fillInput('email')"
+                            />
+                            <p class="error-msg" id="email-error">
+                              Please fill your email with a correct format
+                            </p>
+                          </div>
+                          <div class="form-field">
+                            <label for="interest" class="input-label"
+                              >What are you interested in?</label
+                            >
+                            <select
+                              id="interest"
+                              name="interest"
+                              class="input-field"
+                              oninput="selectInterest()"
+                            >
+                              <option value="none" selected disabled>Select option</option>
+                              <option value="option 1">Option 1</option>
+                              <option value="option 2">Option 2</option>
+                              <option value="option 3">Option 3</option>
+                            </select>
+                            <p class="error-msg" id="interest-error">
+                              Please select one interest
+                            </p>
+                            </div>
+                            <button type="submit" class="button">Send</button>
+                        </form>
+                    </div>  
                     <div class="benefit">
                         <h3>Benefits of Choosing Us</h3>
                         <div class="benefit-list">
@@ -57,68 +150,105 @@
                         </div>
                     </div>
                 </div>    
-                    <div class="contact-form">
-                        <h2>Contact Us</h2>
-                        <p>Sales akan menghubungi anda 1x24 Jam setelah data kami terima.</p>
-                        <form>
-                            <label for="name">Your Name:</label>
-                            <input type="text" id="name" name="name" placeholder="First and last name">
-        
-                            <label for="email">Email Address:</label>
-                            <input type="email" id="email" name="email" placeholder="example@email.com">
-        
-                            <label for="interest">What are you interested in?</label>
-                            <select id="interest" name="interest">
-                                <option value="">Select option</option>
-                                <option value="bali">Bali</option>
-                                <option value="Japan">Japan</option>
-                                <option value="Australia">Australia</option>
-                            </select>
-                            <button type="submit">Send</button>
-                        </form>
-                    </div>
-            </section>
-
-            <section class="Package" id="Package">
-                <h2>Our Package</h2>
-                <div class="Package-gird">
-                    <div class="Package-item">
+              </div>
+              <div class="package" id="our-package">
+                <div class="package-banner">
+                  <div class="container">
+                    <h2 class="section-title">Our Packages</h2>
+                  </div>
+                </div>
+                <div class="container">
+                  <div class="package-list">
+                    <div class="package-item">
+                      <div class="package-icon">
+                        <i data-feather="tag"></i>
+                      </div>
+                      <div class="package-content">
                         <h3>Bali</h3>
                         <p>Travel dan wisata di Bali, kunjungi cagar budaya dan kuliner yang menarik</p>
+                      </div>
                     </div>
-                    <div class="Package-item">
-                        <h3>Japan</h3>
-                        <p>Travel dan wisata di Japan, kunjungi cagar budaya dan kuliner yang menarik</p>
+                    <div class="package-item">
+                      <div class="package-icon">
+                        <i data-feather="tag"></i>
+                      </div>
+                      <div class="package-content">
+                        <h3>japan</h3>
+                        <p>Travel dan wisata di Jepang, kunjungi cagar budaya dan kuliner yang menarik</p>
+                      </div>
                     </div>
-                    <div class="Package-item">
+                    <div class="package-item">
+                      <div class="package-icon">
+                        <i data-feather="tag"></i>
+                      </div>
+                      <div class="package-content">
+                        <h3>Instant Delivery</h3>
+                        <p>
+                          Di kirim instan oleh kurir yang telah di training dengan SOP
+                          untuk menjaga kondisi belanja kamu
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="border" />
+                  <div class="package-list">
+                    <div class="package-item">
+                      <div class="package-icon">
+                        <i data-feather="star"></i>
+                      </div>
+                      <div class="package-content">
                         <h3>Singapore</h3>
-                        <p>Travel dan wisata di Singapore, kunjungi cagar budaya dan kuliner yang menarik</p>
+                        <p>Travel dan wisata di Singapura, kunjungi cagar budaya dan kuliner yang menarik</p>
+                      </div>
                     </div>
-                    <div class="Package-item">
+                    <div class="package-item">
+                      <div class="package-icon">
+                        <i data-feather="star"></i>
+                      </div>
+                      <div class="package-content">
                         <h3>Bandung</h3>
-                        <p>Memiliki Tempat wisata yang sangat recomended untuk dikunjungi</p>
+                        <p>Travel dan wisata di Bandung, kunjungi cagar budaya dan kuliner yang menarik</p>
+                      </div>
                     </div>
-                    <div class="Package-item">
-                        <h3>Surabaya</h3>
-                        <p>Memiliki warisan sejarah dan budaya,dan wisata kuliner yang menggoda selera</p>
-                    </div>
-                    <div class="Package-item">
+                    <div class="package-item">
+                      <div class="package-icon">
+                        <i data-feather="star"></i>
+                      </div>
+                      <div class="package-content">
                         <h3>Bundling Set</h3>
-                        <p>Bingung ingin kemana?sudah tersedia paket untuk kamu dengan harga terjangkau</p>
+                        <p>
+                            Bingung ingin kemana?sudah tersedia paket untuk kamu pergi mengelilingi dunia
+                        </p>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </section>
-            <section class="closing">
-                <h2>Your Trusted Travel Agent's</h2>
-                <p>Your Happines is Our Happines</p>
-                <button class="cta-button">Hubungi Kami</button>
-            </section>
-        </main>
-        <footer>
-            <p>Arthur</p>
-            <p>Term of Service | Privacy Policy</p>
-            <p>&copy; 2024 Arthur</p>
-        </footer>
-        <script src="js/script.js"></script>
-    </body>
-</html>
+              </div>
+              <div class="cta" id="call-us">
+                <div class="container">
+                  <h2 class="section-title">Travel around the World using MyTravel</h2>
+                  <p>Your Happines is Our Happines</p>
+                  <button class="button">Hubungi Kami</button>
+                </div>
+              </div>
+            </main>
+            <footer class="footer">
+              <div class="container">
+                <div class="logo">
+                  MyTravel
+                </div>
+                <ul class="footer-navigation">
+                  <li><a href="#">Terms of Service</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                </ul>
+                <div>
+                  © 2023 <a href="https://www.instagram.com/a_fathur.r">Arthur</a>
+                </div>
+              </div>
+            </footer>
+            <script>
+              feather.replace();
+            </script>
+            <script src="./js/script.js"></script>
+          </body>
+        </html>       
