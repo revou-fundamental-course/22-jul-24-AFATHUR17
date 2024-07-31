@@ -1,17 +1,32 @@
-document.querySelector('form').addEventListener('submit', function(event) {
-    const name = document.querySelector('#name').value;
-    const email = document.querySelector('#email').value;
-    const interest = document.querySelector('#interest ').value;
+// Navbar Toggle
+const burger = document.querySelector('.burger');
+const navLinks = document.querySelector('.nav-links');
 
-    if (!name || !email || !interest) {
-        event.preventDefault();
-        alert('please fill out all fields.')
-    }
+burger.addEventListener('click', () => {
+    navLinks.classList.toggle('nav-active');
 });
 
-const activePage = window.location.pathname;
-const navlinks = document.querySelectorAll('nav a').forEach(link => {
-    if(link.href.includes('${activePage}')){
-        link.classList.add('active');
-    }
-})
+// Slideshow
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let slides = document.querySelectorAll(".mySlides");
+    let dots = document.querySelectorAll(".dot");
+
+    slides.forEach(slide => {
+        slide.style.display = "none";
+    });
+
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1; }
+
+    dots.forEach(dot => {
+        dot.classList.remove("active");
+    });
+
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].classList.add("active");
+
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
