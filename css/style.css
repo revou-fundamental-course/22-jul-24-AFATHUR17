@@ -134,6 +134,16 @@
   to {opacity: 1}
 }
 
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #e9ecef;
+}
+
+.hero h1 {
+  margin: 0;
+}
+
 /* Content Styles */
 .about-contact {
   display: flex;
