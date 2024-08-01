@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Trusted Travel Agent</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <meta
+      name="description"
+      content="Travel around the World using MyTravel"
+    />
+    <meta
+      name="keywords"
+      content="Travel,online travel,travel agent, revou, fcse mini project"
+    />
+    <title>MyTravel.com</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="asset img/logo.png" type="image/png" />
 </head>
 <body>
     <!-- Navbar -->
     <header>
         <nav class="navbar">
-            <div class="logo">moqups</div>
+            <div class="logo">MyTravel</div>
             <ul class="nav-links">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#package" class="nav-link">Our Package</a></li>
-                <li><a href="#contact" class="nav-link">Call Us</a></li>
+                <li><a href="#slideshow-container" class="nav-link">Home</a></li>
+                <li><a href="#our-package" class="nav-link">Our Package</a></li>
+                <li><a href="#call-us" class="nav-link">Call Us</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -25,117 +34,243 @@
     </header>
 
     <!-- Slideshow -->
-    <div class="slideshow-container">
+    <div class="slideshow-container" id="slideshow-container">
         <div class="mySlides fade">
-            <img src="slide1.jpg" style="width:100%">
-            <div class="text">Caption Text 1</div>
+            <img src="asset img/slide1.jpg" style="width:100%">
+            <div class="text">Australia</div>
         </div>
         <div class="mySlides fade">
-            <img src="slide2.jpg" style="width:100%">
-            <div class="text">Caption Text 2</div>
+            <img src="asset img/slide2.jpg" style="width:100%">
+            <div class="text">Jepang</div>
         </div>
         <div class="mySlides fade">
-            <img src="slide3.jpg" style="width:100%">
-            <div class="text">Caption Text 3</div>
+            <img src="asset img/slide3.jpg" style="width:100%">
+            <div class="text">Bali</div>
+        </div>
+        <div class="mySlides fade">
+            <img src="asset img/slide4.jpeg" style="width:100%">
+            <div class="text">Surabaya</div>
+        </div>
+        <div class="mySlides fade">
+            <img src="asset img/slide5.jpeg" style="width:100%">
+            <div class="text">Singapura</div>
         </div>
     </div>
     <br>
     <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
         <span class="dot"></span> 
         <span class="dot"></span> 
         <span class="dot"></span> 
     </div>
 
     <!-- Content -->
-    <section id="home" class="content">
-        <div class="image-text">
-            <h1>Your Trusted Travel Agent's</h1>
-            <p>Your happiness is our happiness</p>
-            <div class="testimonial">
-                <p>"Liburan jadi menyenangkan bersama Travel Agentku."</p>
-                <p>Florence Hughes</p>
+    <div class="container">
+        <div class="about-contact" id="about">
+          <div class="about">
+            <img src="asset img/gambar-pemandangan-hd.jpg" alt="" class="about-img" />
+            <p class="about-caption">
+              Liburan jadi menyenangkan bersama MyTravel
+            </p>
+            <div class="about-author">
+              <img src="asset img/OIP (1).jpeg" alt="" class="author-img" />
+              <div class="author-data">
+                <div class="author-name">Florence Hughes</div>
+                <div class="author-info">Ibu Rumah Tangga, 28</div>
+              </div>
             </div>
-            <div class="contact-form">
-                <h2>Contact Us</h2>
-                <form>
-                    <label for="name">Your Name:</label>
-                    <input type="text" id="name" name="name" placeholder="First and last name">
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" placeholder="example@email.com">
-                    <label for="interest">What are you interested in?</label>
-                    <select id="interest" name="interest">
-                        <option value="bali">Bali</option>
-                        <option value="japan">Japan</option>
-                        <option value="singapore">Singapore</option>
-                    </select>
-                    <button type="submit">Send</button>
-                </form>
+            <hr class="border" />
+            <div class="feature">
+              <h2 class="subsection-title">
+                Beberapa keuntungan yang Anda akan dapatkan dengan menggunakan
+                jasa kami:
+              </h2>
+              <div class="feature-list">
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i data-feather="award"></i>
+                  </div>
+                  <div class="feature-description">Mudah Reschedule Jadwal</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i data-feather="award"></i>
+                  </div>
+                  <div class="feature-description">Efisiensi Waktu dan Tenaga</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i data-feather="award"></i>
+                  </div>
+                  <div class="feature-description">Pilihan yang Lebih Luas</div>
+                </div>
+                <div class="feature-item">
+                  <div class="feature-icon">
+                    <i data-feather="award"></i>
+                  </div>
+                  <div class="feature-description">
+                    Lebih Murah
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="contact">
+            <h2 class="subsection-title">Contact Us</h2>
+            <p>
+              Sales akan menghubungi Anda 1x24 jam setelah data anda kami terima
+            </p>
+            <form
+              class="contact-form"
+              name="contact-form"
+              onsubmit="return validateForm()"
+            >
+              <div class="form-field">
+                <label for="name" class="input-label">Your name:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="input-field"
+                  placeholder="First name and last name"
+                  oninput="fillInput('name')"
+                />
+                <p class="error-msg" id="name-error">Please fill your name</p>
+              </div>
+              <div class="form-field">
+                <label for="email" class="input-label">Email Address:</label>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  class="input-field"
+                  placeholder="example@email.com"
+                  oninput="fillInput('email')"
+                />
+                <p class="error-msg" id="email-error">
+                  Please fill your email with a correct format
+                </p>
+              </div>
+              <div class="form-field">
+                <label for="interest" class="input-label"
+                  >What are you interested in?</label
+                >
+                <select
+                  id="interest"
+                  name="interest"
+                  class="input-field"
+                  oninput="selectInterest()"
+                >
+                  <option value="none" selected disabled>Select option</option>
+                  <option value="option 1">Option 1</option>
+                  <option value="option 2">Option 2</option>
+                  <option value="option 3">Option 3</option>
+                </select>
+                <p class="error-msg" id="interest-error">
+                  Please select one interest
+                </p>
+              </div>
+              <button type="submit" class="button">Send</button>
+            </form>
+          </div>
         </div>
-    </section>
-
-    <!-- Benefit Section -->
-    <section class="benefit">
-        <p>Use this space to provide users with more information about your offer. Consider it a follow-up to your headline and explain the benefits of your service or product</p>
-        <div class="benefit-list">
-            <div class="benefit-item">
-                <div class="benefit-number">1</div>
-                <div class="benefit-text">Your first feature, written in the form of a benefit statement.</div>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-number">2</div>
-                <div class="benefit-text">Your second feature, written in the form of a benefit statement.</div>
-            </div>
-            <div class="benefit-item">
-                <div class="benefit-number">3</div>
-                <div class="benefit-text">Your third feature written, in the form of a benefit statement.</div>
-            </div>
+      </div>
+      <div class="package" id="our-package">
+        <div class="package-banner">
+          <div class="container">
+            <h2 class="section-title">Our Packages</h2>
+          </div>
         </div>
-    </section>
-
-    <!-- Packages Section -->
-    <section id="package" class="packages">
-        <h2>Our Package</h2>
-        <div class="package-grid">
+        <div class="container">
+          <div class="package-list">
             <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="tag"></i>
+              </div>
+              <div class="package-content">
                 <h3>Bali</h3>
-                <p>Travel dan wisata di Bali, kunjungi tempat budaya dan kuliner yang menarik</p>
+                <p>Travel dan wisata di Bali, kunjungi cagar budaya dan kuliner yang menarik</p>
+              </div>
             </div>
             <div class="package-item">
-                <h3>Japan</h3>
-                <p>Travel dan wisata di Jepang, kunjungi tempat budaya dan kuliner yang menarik</p>
+              <div class="package-icon">
+                <i data-feather="tag"></i>
+              </div>
+              <div class="package-content">
+                <h3>japan</h3>
+                <p>Travel dan wisata di Jepang, kunjungi cagar budaya dan kuliner yang menarik</p>
+              </div>
             </div>
             <div class="package-item">
-                <h3>Singapore</h3>
-                <p>This description supports and extends the bullet point above.</p>
-            </div>
-            <div class="package-item">
-                <h3>Bandung</h3>
-                <p>This description supports and extends the bullet point above.</p>
-            </div>
-            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="tag"></i>
+              </div>
+              <div class="package-content">
                 <h3>Surabaya</h3>
-                <p>This description supports and extends the bullet point above.</p>
+                <p>
+                  Memiliki Warisan sejarah dan budaya,dan juga Wisata kuliner yang menggoda selera
+                </p>
+              </div>
+            </div>
+          </div>
+          <hr class="border" />
+          <div class="package-list">
+            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="star"></i>
+              </div>
+              <div class="package-content">
+                <h3>Singapore</h3>
+                <p>Travel dan wisata di Singapura, kunjungi cagar budaya dan kuliner yang menarik</p>
+              </div>
             </div>
             <div class="package-item">
-                <h3>Third Feature</h3>
-                <p>This description supports and extends the bullet point above.</p>
+              <div class="package-icon">
+                <i data-feather="star"></i>
+              </div>
+              <div class="package-content">
+                <h3>Bandung</h3>
+                <p>Travel dan wisata di Bandung, kunjungi cagar budaya dan kuliner yang menarik</p>
+              </div>
             </div>
+            <div class="package-item">
+              <div class="package-icon">
+                <i data-feather="star"></i>
+              </div>
+              <div class="package-content">
+                <h3>Other Packages</h3>
+                <p>Bingung ingin kemana?sudah tersedia paket untuk kamu pergi mengelilingi dunia</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Your Closing Argument Headline</h2>
-        <p>Suspenseful closing argument goes here.</p>
-        <button>Call to Action</button>
-    </section>
-
-    <footer>
-        <p>© 2019 Moqups</p>
-        <a href="#">Terms of Service</a>
-        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="cta" id="call-us">
+        <div class="container">
+          <h2 class="section-title">Travel around the World using MyTravel</h2>
+          <p>Your Happines is Our Happines</p>
+          <button class="button">Hubungi Kami</button>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="logo">
+          MyTravel
+        </div>
+        <ul class="footer-navigation">
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+        <div>
+          © 2023 <a href="https://www.instagram.com/a_fathur.r">Arthur</a>
+        </div>
+      </div>
     </footer>
-
+    <script>
+      feather.replace();
+    </script>
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
